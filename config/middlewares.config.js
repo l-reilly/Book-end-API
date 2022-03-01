@@ -9,7 +9,6 @@ function middlewares(app) {
     app.use(express.urlencoded({ extended: true }));
     app.use(cors({ credentials: true, origin: ORIGIN }));
     app.use(express.static(path.join(__dirname, "..", "public")))
-    app.use('/api/favorite', require('../modules/favorites/favorites.routes'))
   } catch (err) {
     console.log("error", err.message);
   }
