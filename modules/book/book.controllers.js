@@ -48,11 +48,16 @@ async function updateBook(req, res) {
     const book = await Book.findByIdAndUpdate(bookId, req.body, {
       new: true,
     }).lean();
-
     return res.status(200).json(book).end();
   } catch (err) {
     res.status(400).json(err.message).end();
   }
+}
+async function updateImage(formBody) {
+  return userService
+    .patch("/updateProfileImage", formBody, sendUser())
+    .then(onSuccess("update-profile"))
+    .catch(onError("update-profile"));
 }
 
 async function deleteBook(req, res) {
@@ -74,4 +79,5 @@ module.exports = {
   updateBook,
   createBook,
   deleteBook,
+  updateImage
 };

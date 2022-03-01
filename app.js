@@ -3,6 +3,7 @@ const BookRouter = require("./modules/book");
 const taskRouter = require("./modules/task");
 const authRouter = require("./modules/auth");
 const filesRouter = require("./modules/files");
+const favoriteRouter = require("./modules/favorites")
 const path = require("path")
 const { connectDb, middlewares, sessionConfig } = require("./config");
 
@@ -25,6 +26,8 @@ async function start() {
     BookRouter(app);
     taskRouter(app);
     filesRouter(app);
+    favoriteRouter(app)
+
 
     app.get("*", openReactApp);
 

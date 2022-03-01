@@ -8,7 +8,6 @@ const bookSchema = new mongoose.Schema({
   ISBN: {type: Number, required: true},
   genre: { type: String, required: true},
   imageUrl: { type: String }
-  //tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: "Task" }],
 });
 
 module.exports = mongoose.model("Book", bookSchema);
