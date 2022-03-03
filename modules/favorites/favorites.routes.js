@@ -12,8 +12,8 @@ function favoritesRouter(app) {
     .get(ROUTES.getFavorites, middlewares.isLoggedIn, controllers.getFavorites)
     .get(ROUTES.getFavoriteById, middlewares.isLoggedIn, controllers.getFavoriteById)
     .post(ROUTES.createFavorite, middlewares.isLoggedIn, controllers.createFavorite)
-    .put(ROUTES.updateFavorite, middlewares.isLoggedIn, controllers.updateFavorite)
-    .delete(ROUTES.deleteFavorite, middlewares.isLoggedIn, controllers.deleteFavorite);
+    .put(ROUTES.favoriteUpdate, middlewares.isLoggedIn, controllers.favoriteUpdate)
+    .delete(ROUTES.favoriteDelete, middlewares.isLoggedIn, controllers.favoriteDelete);
 
   app.use("/api", router);
 }
